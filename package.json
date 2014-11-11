@@ -1,0 +1,28 @@
+{
+  "name": "detention.unhcrinnovation",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.3.5",
+    "express-partials": "*",
+    "nap": "*",
+    "jade": "*",
+    "less-middleware": "*",
+    "less": "*",
+    "nodemailer": "*",
+    "underscore": "*",
+    "nano": "*",
+    "haml-coffee": "*",
+    "coffee-script": "*",
+    "coffee-middleware": "*",
+    "natural": "*",
+    "ejs": "*",
+    "gulp": "*",
+    "stopwords": "*",
+    "json2csv": "*",
+    "lodash": "*"
+  }
+}

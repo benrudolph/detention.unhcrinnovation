@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %link{:href => "/images/favicon.ico", :rel => "icon", :type => "image/x-icon"}
+      %title UNHCR Innovation Link Lab | Data Visualization of High Commissioner Speeches
+      %meta{:charset => "utf-8"}
+      %meta{:content => "Since UNHCR was established in December of 1950, there’ve been 10 high commissioners who’ve given a total of 703 speeches with a grand total of 1,774,931 words. UNHCR Innovation's Link Lab maps how speeches have changed.", :name => "description"}
+      %meta{:content => "Innovate Data: How UNHCR terminology and language has changed over the years.", :property => "og:title"}
+      %meta{:content => "Since UNHCR was established in December of 1950, there’ve been 10 high commissioners who’ve given a total of 703 speeches with a grand total of 1,774,931 words.", :property => "og:description"}
+      %meta{:content => "http://chronicle.unhcrinnovation.org/images/fb.jpg", :property => "og:image"}
+      %meta{:content => "http://chronicle.unhcrinnovation.org", :property => "og:url"}
+      %meta{:content => "Innovate Data: How UNHCR terminology and language has changed over the years.", :property => "twitter:title"}
+  %body.container-fluid
+    != @body
