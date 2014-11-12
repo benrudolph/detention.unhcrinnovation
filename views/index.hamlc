@@ -1,1 +1,7 @@
-hi
+:javascript
+
+  $(document).ready(function() {
+    router = new Detention.Routers.Index()
+    Backbone.history.start()
+  });
+

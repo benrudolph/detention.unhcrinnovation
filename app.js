@@ -52,8 +52,10 @@ if (cluster.isMaster) {
     publicDir: 'public',
     assets: {
       js: {
-        all: [
+        deps: [
           '/public/javascripts/jquery.min.js',
+        ],
+        all: [
           '/public/javascripts/jquery.tipsy.js',
           '/public/javascripts/scrollspy.js',
           '/public/javascripts/d3.js',
@@ -67,6 +69,7 @@ if (cluster.isMaster) {
           '/public/javascripts/models/*.coffee',
           '/public/javascripts/collections/*.coffee',
           '/public/javascripts/routers/*.coffee',
+          '/public/javascripts/views/module.coffee',
           '/public/javascripts/views/**/*.coffee',
           '/public/javascripts/figures/*.coffee',
         ]
