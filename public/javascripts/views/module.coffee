@@ -8,8 +8,17 @@ class Detention.Views.Module extends Backbone.View
 
   initialize: (opts) ->
 
-  render: ->
+    @model.on 'change:title change:description', (e) =>
+      changed = e.changed
 
-    @$el.html @template.render()
+      keys = _.keys changed
+
+      _.each keys, (key) =>
+        @$el.find(".module-#{key}").text changed[key]
+
+
+  render: =>
+
+    @$el.html @template.render({ model: @model.toJSON() })
 
     @

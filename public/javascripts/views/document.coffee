@@ -1,5 +1,10 @@
 class Detention.Views.Document extends Backbone.View
 
+  dataHeaders:
+    section: 'Section ID'
+    title: 'Title'
+    description: 'Description'
+
   template: Detention.Templates.document
 
   initialize: (opts) ->
@@ -13,10 +18,17 @@ class Detention.Views.Document extends Backbone.View
 
     @views = []
     @views.push new Detention.Views.Intro({ model: @modules.get('intro') })
-    @views.push new Detention.Views.Module({ model: @modules.get('timeline') })
-    @views.push new Detention.Views.Module({ model: @modules.get('legislation') })
-    @views.push new Detention.Views.Module({ model: @modules.get('indicators') })
-    @views.push new Detention.Views.Module({ model: @modules.get('alternatives') })
+    @views.push new Detention.Views.Timeline({ model: @modules.get('timeline') })
+    @views.push new Detention.Views.Legislation({ model: @modules.get('legislation') })
+    @views.push new Detention.Views.Indicators({ model: @modules.get('indicators') })
+    @views.push new Detention.Views.Alternatives({ model: @modules.get('alternatives') })
+
+    $.get "https://data.brace.io/ss/8qAk4nRxW8UMYjNAwPYjSR", (data) =>
+      _.each data.rows, (row) =>
+
+        module = @modules.get(row[@dataHeaders.section])
+        module.set 'title', row[@dataHeaders.title]
+        module.set 'description', row[@dataHeaders.description]
 
   render: ->
 

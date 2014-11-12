@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@black: #3e3e3e;
+@black: #161616;
 @navy: #05557f;
 @yellow: #f1c40f;
 @gray: rgb(200,200,200);
@@ -15,6 +15,7 @@
 @min-height: 600px;
 
 @quote-width: 600px;
+@section-padding: 40px;
 
 
 
@@ -91,6 +92,8 @@ a:hover {
 }
 
 .quote-container {
+  margin-left: -@section-padding;
+  margin-right: -@section-padding;
   background-color: @yellow;
 
   .quote {
@@ -100,9 +103,29 @@ a:hover {
   }
 }
 
+.timeline {
+  background-color: @black;
+}
+
+.timeline-divider {
+  border-left: 1px solid white;
+  position: absolute;
+  top: 50px;
+  bottom: 50px;
+  width: 1px;
+  left: 50%;
+}
+
+.event {
+  color: white;
+
+}
+
 section {
+  padding: 0 @section-padding;
   min-height: @min-height;
   position: relative;
 }
+
 
 
