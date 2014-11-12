@@ -1,12 +1,31 @@
-<div class="col-md-6 col-sm-6 col-xs-12">
-  <h3>
-    <%= model["Legislation Title"] %>
-  </h3>
-  <time>
-    <%= model["Date"] %>
-  </time>
+<div class="event-content col-md-6 col-sm-6 col-xs-12 <%= odd ? 'col-sm-offset-6 odd' : 'even' %>">
+  <div class="event-inner">
 
-  <div class="event-description">
-    <%= model["Description"] %>
+    <div class="row">
+      <div class="col-xs-8">
+        <h3>
+          <%= model["Legislation Title"] %>
+        </h3>
+      </div>
+      <div class="col-xs-4">
+        <time class="pull-right">
+          <%= model["Date"] %>
+        </time>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="divider-orange"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-8">
+        <p class="event-description">
+          <%= model["Description"] %>
+        </p>
+      </div>
+    </div>
   </div>
 </div>

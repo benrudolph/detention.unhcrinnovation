@@ -16,6 +16,7 @@
 
 @quote-width: 600px;
 @section-padding: 40px;
+@timeline-vertical-padding: 50px;
 
 
 
@@ -48,6 +49,12 @@ body {
 h1 {
   font-family: Helvetica Neue, Arial, sans-serif;
   font-weight: 300;
+}
+
+h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
 }
 
 p {
@@ -105,19 +112,69 @@ a:hover {
 
 .timeline {
   background-color: @black;
+  padding-top: @timeline-vertical-padding;
+  padding-bottom: @timeline-vertical-padding;
 }
 
 .timeline-divider {
   border-left: 1px solid white;
   position: absolute;
-  top: 50px;
-  bottom: 50px;
+  top: @timeline-vertical-padding;
+  bottom: @timeline-vertical-padding;
   width: 1px;
   left: 50%;
 }
 
+.divider-orange {
+  border-top: @orange 1px solid;
+}
+
 .event {
   color: white;
+
+  .divider-orange {
+    width: 50px;
+  }
+
+  .event-description {
+    font-weight: 300;
+  }
+  .even {
+    padding-right: 50px;
+
+    .event-inner {
+      float: right;
+    }
+  }
+  .odd {
+    padding-left: 50px;
+    .event-inner {
+      float: left;
+    }
+  }
+
+  time {
+    font-weight: 300;
+  }
+
+  .event-inner {
+    max-width: 500px;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .event {
+
+    .odd, .even {
+      padding-left: 0px;
+      padding-right: 0px;
+      .event-inner {
+        margin: 0 auto;
+        float: none;
+      }
+    }
+  }
 
 }
 

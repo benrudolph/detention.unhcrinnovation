@@ -7,5 +7,8 @@ class Detention.Views.Event extends Backbone.View
   initialize: ->
 
   render: =>
-    @$el.html @template.render({ model: @model.toJSON() })
+    @$el.html @template.render({
+      model: @model.toJSON(),
+      odd: if @model.collection.indexOf(@model) % 2 == 0 then false else true
+    })
     @

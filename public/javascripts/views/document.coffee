@@ -23,6 +23,15 @@ class Detention.Views.Document extends Backbone.View
     @views.push new Detention.Views.Indicators({ model: @modules.get('indicators') })
     @views.push new Detention.Views.Alternatives({ model: @modules.get('alternatives') })
 
+    fn = =>
+      # Rerender intro module
+      @views[0].render()
+
+    throttled = _.throttle fn, 300
+
+    $(window).on 'resize', throttled
+
+
     $.get "https://data.brace.io/ss/8qAk4nRxW8UMYjNAwPYjSR", (data) =>
       _.each data.rows, (row) =>
 
