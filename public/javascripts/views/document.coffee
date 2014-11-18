@@ -9,6 +9,8 @@ class Detention.Views.Document extends Backbone.View
 
   initialize: (opts) ->
 
+    @s = skrollr.init()
+
     @modules = new Backbone.Collection()
     @modules.add new Backbone.Model({ id: 'intro' })
     @modules.add new Backbone.Model({ id: 'timeline' })
@@ -30,6 +32,9 @@ class Detention.Views.Document extends Backbone.View
     throttled = _.throttle fn, 300
 
     $(window).on 'resize', throttled
+
+    $.subscribe 'skrollr.refresh', =>
+      @s.refresh()
 
 
     $.get "https://data.brace.io/ss/8qAk4nRxW8UMYjNAwPYjSR", (data) =>

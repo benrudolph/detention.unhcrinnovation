@@ -11,7 +11,7 @@
     %meta{:content => "http://chronicle.unhcrinnovation.org", :property => "og:url"}
     %meta{:content => "Innovate Data: How UNHCR terminology and language has changed over the years.", :property => "twitter:title"}
     != @nap.css('all')
-  %body.container-fluid
+  %body#skrollr-body.container-fluid
     != @nap.js('deps')
     != @body
     != @nap.js('all')

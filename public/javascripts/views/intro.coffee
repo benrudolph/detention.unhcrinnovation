@@ -9,7 +9,6 @@ class Detention.Views.Intro extends Detention.Views.Module
 
     $window = $ window
 
-    @$el.css 'width', $window.width()
     @$el.css 'height', $window.height()
 
     @

@@ -97,7 +97,7 @@ if (cluster.isMaster) {
 
   // all environments
   app.engine('hamlc', require('haml-coffee').__express);
-  app.set('port', process.env.PORT || 3000);
+  app.set('port', process.env.PORT || 3333);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'hamlc');
   app.use(express.favicon());

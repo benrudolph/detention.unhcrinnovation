@@ -18,6 +18,8 @@
 @section-padding: 40px;
 @timeline-vertical-padding: 50px;
 
+@dot-radius: 10px;
+
 
 
 @font-face {
@@ -55,6 +57,7 @@ h3 {
   margin: 0;
   padding: 0;
   font-size: 18px;
+  line-height: 1.3em;
 }
 
 p {
@@ -81,6 +84,10 @@ a:hover {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+
+  .unhcr-logo {
+    margin: 30px auto;
+  }
 }
 
 .absolute-center {
@@ -90,6 +97,14 @@ a:hover {
   bottom: 0;
   width: @max-width;
   margin: 0 auto;
+}
+
+.unhcr-logo {
+  background-image: url('/images/logo.png');
+  background-size: 60px 60px;
+  background-position: center;
+  width: 60px;
+  height: 60px;
 }
 
 .intro-text {
@@ -134,6 +149,7 @@ a:hover {
 
   .divider-orange {
     width: 50px;
+    margin: 12px 0;
   }
 
   .event-description {
@@ -151,6 +167,12 @@ a:hover {
     .event-inner {
       float: left;
     }
+  }
+
+  .event-content {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    position: relative;
   }
 
   time {
@@ -184,5 +206,43 @@ section {
   position: relative;
 }
 
+.dot {
+  background-color: black;
+  width: 2 * @dot-radius;
+  height: 2 * @dot-radius;
+  border-radius: 2 * @dot-radius;
+  margin: 0 auto
+}
+
+thead {
+  td {
+    text-align: center;
+  }
+
+  td:first-child {
+    text-align: left;
+  }
+}
+
+.indicator {
+  text-align: center;
+  h3 {
+    font-weight: 300;
+  }
+}
+
+.axis line {
+}
+
+.axis text {
+  font-size: 11px;
+}
+
+.axis path {
+  fill: none;
+  stroke: #ccc;
+  shape-rendering: crispEdges;
+  stroke-dasharray: 3;
+}
 
 

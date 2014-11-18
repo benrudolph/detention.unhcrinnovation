@@ -11,6 +11,7 @@ class Detention.Views.Timeline extends Detention.Views.Module
     $.get "https://data.brace.io/ss/To4FfFoaaAbz75NxcsCtqP", (data) =>
       models = data.rows
       @collection.reset models
+      $.publish 'skrollr.refresh'
 
   render: =>
     super
