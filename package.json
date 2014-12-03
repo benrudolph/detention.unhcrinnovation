@@ -11,7 +11,7 @@
     "nap": "*",
     "jade": "*",
     "less-middleware": "*",
-    "less": "*",
+    "less": "~1",
     "nodemailer": "*",
     "underscore": "*",
     "nano": "*",
