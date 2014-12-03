@@ -41,10 +41,10 @@ if (cluster.isMaster) {
 
 
   nap.preprocessors['.coffee'] = function(contents) { return coffee.compile(contents); };
-  nap.preprocessors['.less'] = function(contents) {
-    less.render(contents, function(e, output) { contents = output });
-    return contents
-  };
+  //nap.preprocessors['.less'] = function(contents) {
+  //  less.render(contents, function(e, output) { contents = output });
+  //  return contents
+  //};
 
 
   // nap config
