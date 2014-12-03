@@ -3,8 +3,6 @@ var nap = require('nap');
 var nodemailer = require('nodemailer');
 var fs = require('fs');
 // email config
-var emailConfig,
-    smtpTransport;
 
 
 if (cluster.isMaster) {
@@ -43,11 +41,6 @@ if (cluster.isMaster) {
 
 
   nap.preprocessors['.coffee'] = function(contents) { return coffee.compile(contents); };
-
-  emailConfig = (JSON.parse(fs.readFileSync("config/email.json", "utf8")))[app.get('env') || 'development'];
-
-  smtpTransport = nodemailer.createTransport("SMTP", emailConfig);
-
 
 
   // nap config
