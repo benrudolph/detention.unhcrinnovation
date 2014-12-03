@@ -41,6 +41,7 @@ if (cluster.isMaster) {
 
 
   nap.preprocessors['.coffee'] = function(contents) { return coffee.compile(contents); };
+  nap.preprocessors['.less'] = function(contents) { return less.render(contents); };
 
 
   // nap config
