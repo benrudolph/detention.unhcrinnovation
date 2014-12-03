@@ -104,7 +104,6 @@ if (cluster.isMaster) {
   app.use(app.router);
   app.use(require('less-middleware')(path.join(__dirname, 'public')));
   app.use(express.static(path.join(__dirname, 'public')));
-  app.use(emailErrors);
 
   // development only
   if ('development' == app.get('env')) {
@@ -124,27 +123,4 @@ if (cluster.isMaster) {
       });
     });
   }
-}
-
-function emailErrors(err, req, res, next) {
-  console.error(err.stack);
-  var mailOptions = {
-    from: "Ben Rudolph <rudolphben@gmail.com>", // sender address
-    to: "rudolph@unhcr.org", // list of receivers
-    subject: "Error in UNHCR Discourse", // Subject line
-    text: err.stack, // plaintext body
-  };
-  // send mail with defined transport object
-  smtpTransport.sendMail(mailOptions, function(error, response){
-    if (error){
-      console.log(error);
-    }else{
-      console.log("Message sent: " + response.message);
-    }
-    // if you don't want to use this transport object anymore, uncomment following line
-    //smtpTransport.close(); // shut down the connection pool, no more messages
-  });
-
-
-  next(err);
 }
