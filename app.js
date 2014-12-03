@@ -10,6 +10,9 @@ var emailConfig,
 if (cluster.isMaster) {
 
   var cpuCount = require('os').cpus().length;
+  if (cpuCount > 3) {
+    cpuCount = 3;
+  }
 
   // Create a worker for each CPU
   for (var i = 0; i < cpuCount; i += 1) {
