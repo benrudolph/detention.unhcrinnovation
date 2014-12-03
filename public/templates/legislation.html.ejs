@@ -31,7 +31,7 @@
                   <% if (idx === 0) { %>
                     <%= row[header] %>
                   <% } else if (row[header]) { %>
-                    <div class="dot"></div>
+                    <div class="<%= header %> dot"></div>
                   <% } %>
                 </td>
                 <% }) %>

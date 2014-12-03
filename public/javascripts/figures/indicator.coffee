@@ -59,12 +59,13 @@ class Detention.Figures.Indicator extends Backbone.View
 
   render: =>
 
-    dots = @g.selectAll('.dot').data @data
+    dots = @g.selectAll('.dot').data _.filter(@data, (d) -> d.value? and _.isNumber(d.value))
     dots.enter().append('circle')
-    dots.attr('class', (d) -> 'dot')
+    dots.attr('class', (d) -> "dot #{d.key}")
       .attr('r', 5)
       .attr('cx', (d) => @x(d.value))
       .attr('cy', @height / 2)
+      .attr('original-title', (d) -> "<h1>#{d.key}: #{d.value}</h1>")
 
     @
 

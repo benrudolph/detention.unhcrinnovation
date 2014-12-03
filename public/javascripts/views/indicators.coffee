@@ -20,6 +20,10 @@ class Detention.Views.Indicators extends Detention.Views.Module
           })
 
       @indicators.reset models
+      $('[original-title]').tipsy
+        html: true
+        gravity: 's'
+
 
   render: =>
     super

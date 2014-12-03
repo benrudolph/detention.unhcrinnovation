@@ -20,6 +20,68 @@
 
 @dot-radius: 10px;
 
+@US: #a6cee3;
+@CA: #1f78b4;
+@HU: #b2df8a;
+@ID: #33a02c;
+@IL: #fb9a99;
+@LT: #e31a1c;
+@MY: #fdbf6f;
+@MX: #ff7f00;
+@TH: #cab2d6;
+@UK: #6a3d9a;
+@ZM: #ffff99;
+@MT: #b15928;
+
+.US {
+  fill: @US;
+  background-color: @US;
+}
+.CA {
+  fill: @CA;
+  background-color: @CA;
+}
+.HU {
+  fill: @HU;
+  background-color: @HU;
+}
+.ID {
+  fill: @ID;
+  background-color: @ID;
+}
+.IL {
+  fill: @IL;
+  background-color: @IL;
+}
+.LT {
+  fill: @LT;
+  background-color: @LT;
+}
+.MY {
+  fill: @MY;
+  background-color: @MY;
+}
+.MX {
+  fill: @MX;
+  background-color: @MX;
+}
+.TH {
+  fill: @TH;
+  background-color: @TH;
+}
+.UK {
+  fill: @UK;
+  background-color: @UK;
+}
+.ZM {
+  fill: @ZM;
+  background-color: @ZM;
+}
+.MT {
+  fill: @MT;
+  background-color: @MT;
+}
+
 
 
 @font-face {
@@ -46,6 +108,7 @@
 body {
   font-family: 'Lato', Helvetica, Arial, sans-serif;
   color: @black;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -207,11 +270,11 @@ section {
 }
 
 .dot {
-  background-color: black;
   width: 2 * @dot-radius;
   height: 2 * @dot-radius;
   border-radius: 2 * @dot-radius;
-  margin: 0 auto
+  margin: 0 auto;
+  opacity: .6;
 }
 
 thead {

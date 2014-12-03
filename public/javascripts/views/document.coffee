@@ -53,6 +53,3 @@ class Detention.Views.Document extends Backbone.View
     _.each @views, (v) ->
       $modules.append v.render().el
 
-
-
-
